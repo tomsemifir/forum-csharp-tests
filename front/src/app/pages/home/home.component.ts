@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Subject } from 'src/app/models/subject';
-import { SubjectService } from 'src/app/services/subject.service';
+import { Topic } from 'src/app/models/topic';
+import { SubjectService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { SubjectService } from 'src/app/services/subject.service';
 })
 export class HomeComponent implements OnInit {
 
-  subjects : Subject[];
+  subjects : Topic[];
 
   subjectForm = this.fb.group({
     title: ""

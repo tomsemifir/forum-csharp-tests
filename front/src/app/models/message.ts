@@ -1,5 +1,6 @@
 export class Message {
+    id: number
     content: string;
-    likes: number;
     createdDate: Date;
+    topicId: number;
 }

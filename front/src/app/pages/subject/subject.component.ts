@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'src/app/models/subject';
-import { SubjectService } from 'src/app/services/subject.service';
+import { Message } from 'src/app/models/message';
+import { Topic } from 'src/app/models/topic';
+import { MessageService } from 'src/app/services/message.service';
+import { SubjectService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-subject',
@@ -11,8 +13,8 @@ import { SubjectService } from 'src/app/services/subject.service';
 })
 export class SubjectComponent implements OnInit {
 
-  id : string;
-  subject : Subject;
+  id : number;
+  subject : Topic;
 
   messageForm = this.fb.group({
     content: ""
@@ -20,6 +22,7 @@ export class SubjectComponent implements OnInit {
 
   constructor(
     private subjectService: SubjectService,
+    private messageService: MessageService,
     private route: ActivatedRoute,
     private fb: FormBuilder
     ) { 
@@ -39,7 +42,9 @@ export class SubjectComponent implements OnInit {
   }
 
   sendMessage() {
-    this.subjectService.addMessage(this.id, this.messageForm.value).subscribe({
+    let message : Message = this.messageForm.value;
+    message.topicId = this.id;
+    this.messageService.create(message).subscribe({
       next: () => {
         this.messageForm.reset();
         this.initSubject();

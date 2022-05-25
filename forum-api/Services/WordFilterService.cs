@@ -2,7 +2,7 @@
 {
     public class WordFilterService
     {
-        private const String BAN_WORDS_PATH = "D:\\dev\\langages\\csharp\\forum-api\\insults.txt";
+        private const String BAN_WORDS_PATH = "D:\\dev\\projets\\forum-csharp\\forum-api\\insults.txt";
         public String[] BanWords { get; set; }
 
         public WordFilterService()

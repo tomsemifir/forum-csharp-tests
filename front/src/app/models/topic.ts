@@ -1,9 +1,8 @@
 import { Message } from "./message";
 
-export class Subject {
-    _id : string;
+export class Topic {
+    id : number;
     title : string;
-    likes: number;
     messages: Message[];
     createdDate: Date;
     updatedDate: Date;

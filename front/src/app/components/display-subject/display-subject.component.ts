@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subject } from 'src/app/models/subject';
+import { Topic } from 'src/app/models/topic';
 
 @Component({
   selector: 'app-display-subject',
@@ -8,7 +8,7 @@ import { Subject } from 'src/app/models/subject';
 })
 export class DisplaySubjectComponent implements OnInit {
 
-  @Input() subject : Subject;
+  @Input() subject : Topic;
 
   constructor() { }
 

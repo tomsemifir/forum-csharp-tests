@@ -1,7 +1,7 @@
 <div class="card" *ngIf="subject">
     <div class="card-body">
         <h2>
-            <a [routerLink]="['/subject', subject._id]">{{subject.title}}</a>
+            <a [routerLink]="['/subject', subject.id]">{{subject.title}}</a>
         </h2>
 
         <p>Créé le : {{subject.createdDate | date : 'short'}}</p>
