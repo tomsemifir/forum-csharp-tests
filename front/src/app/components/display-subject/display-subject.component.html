@@ -1,0 +1,10 @@
+<div class="card" *ngIf="subject">
+    <div class="card-body">
+        <h2>
+            <a [routerLink]="['/subject', subject._id]">{{subject.title}}</a>
+        </h2>
+
+        <p>Créé le : {{subject.createdDate | date : 'short'}}</p>
+        <p>dernier message : {{subject.updatedDate | date : 'short'}}</p>
+    </div>
+</div>

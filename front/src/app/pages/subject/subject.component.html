@@ -1,0 +1,15 @@
+<button class="btn btn-danger" routerLink="/home">Retour</button>
+
+<ng-container *ngIf="subject">
+    <h2>{{subject.title}}</h2>
+    <ng-container *ngFor="let message of subject.messages">
+        <app-display-message [message]="message"></app-display-message>
+    </ng-container>
+</ng-container>
+
+<form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+    <label> Ecrire un nouveau message :
+        <textarea cols="150" rows="5" formControlName="content"></textarea>
+    </label>
+    <button class="btn btn-success">Envoyer</button>
+</form>

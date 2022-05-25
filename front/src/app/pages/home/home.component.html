@@ -1,0 +1,11 @@
+<form [formGroup]="subjectForm" (ngSubmit)="sendSubject()">
+    <label>Titre du sujet:
+        <input type="text" formControlName="title">
+    </label>
+    <button class="btn btn-success">Créer</button>
+</form>
+
+
+<ng-container *ngFor="let subject of subjects">
+    <app-display-subject [subject]="subject"></app-display-subject>
+</ng-container>
